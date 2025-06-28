@@ -14,10 +14,7 @@ app.use(bodyParser.json()); // Habilita o Express a ler JSON no corpo das requis
 // Todas as rotas da API terão o prefixo /api
 app.use('/api', routes);
 
-// Rota de teste simples para verificar se o servidor está online
-app.get('/', (req, res) => {
-    res.send('Backend do Caça-Palavras Binário funcionando!');
-});
+
 
 // Inicia o servidor e o coloca para escutar na porta definida
 app.listen(PORT, () => {
