@@ -5,15 +5,16 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql" // <--- MUDAR AQUI!
+  provider = "postgresql" // Confirme que é postgresql aqui
   url      = env("DATABASE_URL")
 }
 
 model User {
   id       Int    @id @default(autoincrement())
   username String @unique
-  password String // Em produção, armazene hashes (ex: bcrypt)
-  role     String // 'professor' ou 'aluno'
+  password String
+  role     String
+  // totalScore Int      @default(0) // Comente ou remova esta linha se quiser voltar o DB sem score
 }
 
 model Word {
